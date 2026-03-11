@@ -1058,7 +1058,8 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 10000;
+            z-index: 9999;
+            background: transparent;
         }
 
         .spider-cursor {
@@ -1616,9 +1617,8 @@
         
         // Animation loop for trail
         function animateTrail() {
-            // Clear canvas with fade effect
-            ctx.fillStyle = 'rgba(5, 8, 16, 0.15)';
-            ctx.fillRect(0, 0, cursorCanvas.width, cursorCanvas.height);
+            // Clear canvas completely (transparent)
+            ctx.clearRect(0, 0, cursorCanvas.width, cursorCanvas.height);
             
             // Check if mouse stopped moving
             if (Date.now() - lastMoveTime > 100) {
